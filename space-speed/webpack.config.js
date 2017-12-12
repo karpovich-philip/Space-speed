@@ -1,7 +1,7 @@
 module.exports = {
-    entry:  "./js/common.js",
+    entry:  "./src/js/common.js",
     output: {
-        path: __dirname + "/dist",
+        path: __dirname + "/src/dist",
         filename: "script.js"
     },
     watch: true,
