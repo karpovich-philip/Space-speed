@@ -1,4 +1,4 @@
-import {gameState} from './common';
+import { gameState } from './common';
 import { movePlayerShip } from './player-control';
 import { checkCollisionWithShip, checkCollisionPlayerBulletWithEntity } from './collisions';
 

@@ -1,7 +1,6 @@
 const removeSpaceStuff = storage => {
     let screenHeight = document.documentElement.clientHeight;
 
-    //переписать на свитч
     for (let i = 0; i < storage.length; i++) {
         if (storage[i].classList.contains('space_entity')) {
             if (storage[i].getBoundingClientRect().top >= screenHeight) {

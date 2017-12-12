@@ -1,4 +1,4 @@
-import {gameState} from './common';
+import { gameState } from './common';
 import { getTopPosOfEntity } from './data';
 
 

@@ -1,7 +1,7 @@
-import {gameState} from './common';
+import { gameState } from './common';
 import { playSound } from './sound';
 import { addScore } from './score';
-import { redrawSpaceStuff } from './manage-space-stuff';
+import { redrawSpaceStuff } from './space-stuff';
 
 
 const checkCollisionWithShip = (storage, cls) => {

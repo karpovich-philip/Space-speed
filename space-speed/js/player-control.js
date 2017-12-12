@@ -1,4 +1,4 @@
-import {gameState} from './common';
+import { gameState } from './common';
 import { playSound } from './sound';
 import { createBullet } from './bullet';
 

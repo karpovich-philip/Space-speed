@@ -1,4 +1,5 @@
-import {gameState} from './common';
+import { gameState } from './common';
+
 
 const playSound = (sound, play) => {
     if (gameState.gameOver) return;
@@ -18,23 +19,23 @@ const playSound = (sound, play) => {
     let audio = new Audio();
     switch (sound) {
         case 'shot':
-            audio.src = '../space-speed/sounds/shot.mp3';
+            audio.src = '../sounds/shot.mp3';
             break;
         case 'final_crash':
-            audio.src = '../space-speed/sounds/final_crash.mp3';
+            audio.src = '../sounds/final_crash.mp3';
             break;
         case 'hit':
-            audio.src = '../space-speed/sounds/hit.mp3';
+            audio.src = '../sounds/hit.mp3';
             break;
         case 'damage_playership':
-            audio.src = '../space-speed/sounds/damage_playership.mp3';
+            audio.src = '../sounds/damage_playership.mp3';
             break;
         case 'game_bg_talk':
-            audio.src = '../space-speed/sounds/game_bg_talk.mp3';
+            audio.src = '../sounds/game_bg_talk.mp3';
             gameState.soundGameBgTalk = audio;
             break;
         case 'game_bg_music':
-            audio.src = '../space-speed/sounds/game_bg_music.mp3';
+            audio.src = '../sounds/game_bg_music.mp3';
             gameState.soundGameBgMusic = audio;
             break;
     }

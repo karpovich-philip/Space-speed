@@ -1,5 +1,5 @@
-import {gameState} from './common';
-import { removeSpaceStuff } from './manage-space-stuff';
+import { gameState } from './common';
+import { removeSpaceStuff } from './space-stuff';
 import { getTopPosOfEntity } from './data';
 
 

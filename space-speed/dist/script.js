@@ -196,6 +196,7 @@ init();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common__ = __webpack_require__(0);
 
 
+
 const playSound = (sound, play) => {
     if (__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].gameOver) return;
 
@@ -214,23 +215,23 @@ const playSound = (sound, play) => {
     let audio = new Audio();
     switch (sound) {
         case 'shot':
-            audio.src = '../space-speed/sounds/shot.mp3';
+            audio.src = '../sounds/shot.mp3';
             break;
         case 'final_crash':
-            audio.src = '../space-speed/sounds/final_crash.mp3';
+            audio.src = '../sounds/final_crash.mp3';
             break;
         case 'hit':
-            audio.src = '../space-speed/sounds/hit.mp3';
+            audio.src = '../sounds/hit.mp3';
             break;
         case 'damage_playership':
-            audio.src = '../space-speed/sounds/damage_playership.mp3';
+            audio.src = '../sounds/damage_playership.mp3';
             break;
         case 'game_bg_talk':
-            audio.src = '../space-speed/sounds/game_bg_talk.mp3';
+            audio.src = '../sounds/game_bg_talk.mp3';
             __WEBPACK_IMPORTED_MODULE_0__common__["gameState"].soundGameBgTalk = audio;
             break;
         case 'game_bg_music':
-            audio.src = '../space-speed/sounds/game_bg_music.mp3';
+            audio.src = '../sounds/game_bg_music.mp3';
             __WEBPACK_IMPORTED_MODULE_0__common__["gameState"].soundGameBgMusic = audio;
             break;
     }
@@ -451,7 +452,6 @@ const getTopPosOfEntity = (entity, storage) => {
 const removeSpaceStuff = storage => {
     let screenHeight = document.documentElement.clientHeight;
 
-    //переписать на свитч
     for (let i = 0; i < storage.length; i++) {
         if (storage[i].classList.contains('space_entity')) {
             if (storage[i].getBoundingClientRect().top >= screenHeight) {
@@ -552,7 +552,7 @@ const draw = timePassed => {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sound__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__score__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__manage_space_stuff__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__space_stuff__ = __webpack_require__(5);
 
 
 
@@ -580,7 +580,7 @@ const checkCollisionWithShip = (storage, cls) => {
                 playerShip.classList.add('damaged_player_ship')
                 lives[0].remove();
                 storage.splice(i, 1);
-                Object(__WEBPACK_IMPORTED_MODULE_3__manage_space_stuff__["a" /* redrawSpaceStuff */])(storage, cls);
+                Object(__WEBPACK_IMPORTED_MODULE_3__space_stuff__["a" /* redrawSpaceStuff */])(storage, cls);
 
                 setTimeout(function () {
                     playerShip.classList.remove('snake');
@@ -619,8 +619,8 @@ const checkCollisionPlayerBulletWithEntity = () => {
                 Object(__WEBPACK_IMPORTED_MODULE_2__score__["a" /* addScore */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff[n]);
                 __WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageOfPlayerBullets.splice(i, 1);
                 __WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff.splice(n, 1);
-                Object(__WEBPACK_IMPORTED_MODULE_3__manage_space_stuff__["a" /* redrawSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff, '.space_stuff');
-                Object(__WEBPACK_IMPORTED_MODULE_3__manage_space_stuff__["a" /* redrawSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageOfPlayerBullets, '.player_bullets');
+                Object(__WEBPACK_IMPORTED_MODULE_3__space_stuff__["a" /* redrawSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff, '.space_stuff');
+                Object(__WEBPACK_IMPORTED_MODULE_3__space_stuff__["a" /* redrawSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageOfPlayerBullets, '.player_bullets');
             }
         }
     }
@@ -672,7 +672,7 @@ const addScore = entity => {
 /* unused harmony export SpaceEntity */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return createSpaceEntity; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__manage_space_stuff__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__space_stuff__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data__ = __webpack_require__(4);
 
 
@@ -728,9 +728,9 @@ const createSpaceEntity = () => {
         document.querySelector('.space_stuff').appendChild(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff[__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff.length - 1]);
         __WEBPACK_IMPORTED_MODULE_0__common__["gameState"].count++;
 
-        Object(__WEBPACK_IMPORTED_MODULE_1__manage_space_stuff__["b" /* removeSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff);
-        Object(__WEBPACK_IMPORTED_MODULE_1__manage_space_stuff__["b" /* removeSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageOfPlayerBullets);
-        Object(__WEBPACK_IMPORTED_MODULE_1__manage_space_stuff__["b" /* removeSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageOfEnemyBullets);
+        Object(__WEBPACK_IMPORTED_MODULE_1__space_stuff__["b" /* removeSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff);
+        Object(__WEBPACK_IMPORTED_MODULE_1__space_stuff__["b" /* removeSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageOfPlayerBullets);
+        Object(__WEBPACK_IMPORTED_MODULE_1__space_stuff__["b" /* removeSpaceStuff */])(__WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageOfEnemyBullets);
         Object(__WEBPACK_IMPORTED_MODULE_2__data__["a" /* getTopPosOfEntity */])('space_entity', __WEBPACK_IMPORTED_MODULE_0__common__["gameState"].storageSpaceStuff);
     }, loop)
 }

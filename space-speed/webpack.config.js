@@ -1,7 +1,8 @@
 module.exports = {
     entry:  "./js/common.js",
     output: {
-        filename: "index.js"
+        path: __dirname + "/dist",
+        filename: "script.js"
     },
     watch: true,
     watchOptions: {
